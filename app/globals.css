@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Base */
+  --color-background: #fbf6e9; /* paper — fondo general */
+  --color-foreground: #16231c; /* ink — texto principal */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-surface: #f3ecda; /* paper-dim — cards, contenedores elevados */
+  --color-surface-foreground: #16231c;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Primary — CTA principal, marca (rojo sello) */
+  --color-primary: #d1392b;
+  --color-primary-hover: #b92e22;
+  --color-primary-foreground: #fbf6e9;
+
+  /* Secondary — acciones alternativas (verde ahorro) */
+  --color-secondary: #2f8f5b;
+  --color-secondary-hover: #24734a;
+  --color-secondary-foreground: #fbf6e9;
+
+  /* Accent — highlights, badges de porcentaje (ámbar) */
+  --color-accent: #f2b705;
+  --color-accent-hover: #cf9c04;
+  --color-accent-foreground: #16231c; /* texto oscuro: el ámbar es claro */
+
+  /* Muted — texto/fondos secundarios, bordes */
+  --color-muted: #dbe2dd;
+  --color-muted-foreground: #5b6b63;
+
+  --color-border: #dbe2dd;
+  --color-input: #dbe2dd;
+  --color-ring: #d1392b; /* anillo de foco = primary */
+
+  /* Estado */
+  --color-success: #2f8f5b;
+  --color-success-foreground: #fbf6e9;
+
+  --color-warning: #f2b705;
+  --color-warning-foreground: #16231c;
+
+  --color-destructive: #8c2318; /* rojo más oscuro/apagado que primary */
+  --color-destructive-foreground: #fbf6e9;
+
+  /* Tipografía */
+  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Radios */
+  --radius-ticket: 1.25rem;
+  --radius-badge: 0.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
 }
