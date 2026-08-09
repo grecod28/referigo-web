@@ -1,4 +1,14 @@
 {
+  "header": {
+    "brand": "ReferiGo",
+    "nav": {
+      "home": "Home",
+      "offers": "Offers",
+      "coupons": "Coupons"
+    },
+    "search": "Search",
+    "profile": "Profile"
+  },
   "home": {
     "title": "Welcome to ReferiGo",
     "description": "Your referral platform"
