@@ -1,58 +1,116 @@
 @import "tailwindcss";
 
+:root {
+  /* ─────────────────────────────
+     Brand
+     ───────────────────────────── */
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-200: #ddd6fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+  --color-brand-800: #5b21b6;
+  --color-brand-900: #4c1d95;
+
+  /* ─────────────────────────────
+     Background
+     ───────────────────────────── */
+  --color-background: #09090b;
+  --color-background-secondary: #111113;
+  --color-surface: #18181b;
+  --color-surface-hover: #27272a;
+  --color-border: #27272a;
+
+  /* ─────────────────────────────
+     Text
+     ───────────────────────────── */
+  --color-text: #fafafa;
+  --color-text-secondary: #d4d4d8;
+  --color-text-muted: #a1a1aa;
+  --color-text-disabled: #71717a;
+
+  /* ─────────────────────────────
+     Success / Savings
+     ───────────────────────────── */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* ─────────────────────────────
+     Warning / Expiring
+     ───────────────────────────── */
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+
+  /* ─────────────────────────────
+     Error
+     ───────────────────────────── */
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+}
+
 @theme {
-  /* Base */
-  --color-background: #fbf6e9; /* paper — fondo general */
-  --color-foreground: #16231c; /* ink — texto principal */
+  /* Brand */
+  --color-brand-50: #f5f3ff;
+  --color-brand-100: #ede9fe;
+  --color-brand-200: #ddd6fe;
+  --color-brand-300: #c4b5fd;
+  --color-brand-400: #a78bfa;
+  --color-brand-500: #8b5cf6;
+  --color-brand-600: #7c3aed;
+  --color-brand-700: #6d28d9;
+  --color-brand-800: #5b21b6;
+  --color-brand-900: #4c1d95;
 
-  --color-surface: #f3ecda; /* paper-dim — cards, contenedores elevados */
-  --color-surface-foreground: #16231c;
+  /* Background */
+  --color-background: #09090b;
+  --color-background-secondary: #111113;
+  --color-surface: #18181b;
+  --color-surface-hover: #27272a;
+  --color-border: #27272a;
 
-  /* Primary — CTA principal, marca (rojo sello) */
-  --color-primary: #d1392b;
-  --color-primary-hover: #b92e22;
-  --color-primary-foreground: #fbf6e9;
+  /* Text */
+  --color-text: #fafafa;
+  --color-text-secondary: #d4d4d8;
+  --color-text-muted: #a1a1aa;
+  --color-text-disabled: #71717a;
 
-  /* Secondary — acciones alternativas (verde ahorro) */
-  --color-secondary: #2f8f5b;
-  --color-secondary-hover: #24734a;
-  --color-secondary-foreground: #fbf6e9;
+  /* Success */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
 
-  /* Accent — highlights, badges de porcentaje (ámbar) */
-  --color-accent: #f2b705;
-  --color-accent-hover: #cf9c04;
-  --color-accent-foreground: #16231c; /* texto oscuro: el ámbar es claro */
+  /* Warning */
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
 
-  /* Muted — texto/fondos secundarios, bordes */
-  --color-muted: #dbe2dd;
-  --color-muted-foreground: #5b6b63;
-
-  --color-border: #dbe2dd;
-  --color-input: #dbe2dd;
-  --color-ring: #d1392b; /* anillo de foco = primary */
-
-  /* Estado */
-  --color-success: #2f8f5b;
-  --color-success-foreground: #fbf6e9;
-
-  --color-warning: #f2b705;
-  --color-warning-foreground: #16231c;
-
-  --color-destructive: #8c2318; /* rojo más oscuro/apagado que primary */
-  --color-destructive-foreground: #fbf6e9;
-
-  /* Tipografía */
-  --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
-  --font-sans: "Inter", ui-sans-serif, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-
-  /* Radios */
-  --radius-ticket: 1.25rem;
-  --radius-badge: 0.5rem;
+  /* Error */
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
 }
 
 body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
