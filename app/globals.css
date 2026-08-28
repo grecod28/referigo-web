@@ -114,3 +114,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
 }
+
+button:hover {
+  cursor: pointer;
+}

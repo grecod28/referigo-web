@@ -40,7 +40,7 @@ type SelectProps = InputBase &
 type FieldProps = InputProps | TextareaProps | SelectProps;
 
 const inputBaseClasses =
-  "w-full rounded-ticket border border-input bg-surface px-4 py-2.5 text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-ring/20 disabled:cursor-not-allowed disabled:opacity-50";
+  "w-full h-full rounded-ticket border border-input bg-surface px-4 py-2.5 text-foreground placeholder:text-muted-foreground transition-colors disabled:cursor-not-allowed disabled:opacity-50";
 
 const labelClasses = "mb-1.5 block text-sm font-medium text-foreground";
 const errorClasses = "mt-1.5 text-sm text-destructive";
@@ -56,7 +56,7 @@ function InputField({
 }: InputProps) {
   const inputId = id ?? label?.toLowerCase().replace(/\s+/g, "-");
   return (
-    <div className="flex flex-col gap-0">
+    <div className="w-full flex flex-col gap-0">
       {label && (
         <label htmlFor={inputId} className={labelClasses}>
           {label}
