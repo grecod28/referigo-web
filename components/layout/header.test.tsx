@@ -10,10 +10,10 @@ describe("Header", () => {
     expect(form).toHaveAttribute("action", "/search");
   });
 
-  it("renders the hamburger, notification and profile icons", () => {
+  it("renders the header icons", () => {
     const { container } = render(<Header />);
 
-    expect(container.querySelectorAll("svg")).toHaveLength(4);
+    expect(container.querySelectorAll("svg")).toHaveLength(5);
   });
 
   it("opens the sidebar menu when the hamburger button is clicked", () => {
