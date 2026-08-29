@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 import { Header } from "@/components/layout/header";
 
 describe("Header", () => {
@@ -10,9 +10,32 @@ describe("Header", () => {
     expect(form).toHaveAttribute("action", "/search");
   });
 
-  it("renders the notification and profile icons", () => {
+  it("renders the hamburger, notification and profile icons", () => {
     const { container } = render(<Header />);
 
-    expect(container.querySelectorAll("svg")).toHaveLength(2);
+    expect(container.querySelectorAll("svg")).toHaveLength(4);
+  });
+
+  it("opens the sidebar menu when the hamburger button is clicked", () => {
+    const onOpenSidebar = jest.fn();
+
+    const { getByRole } = render(<Header onOpenSidebar={onOpenSidebar} />);
+
+    const hamburger = getByRole("button", { name: "Abrir menú" });
+    expect(hamburger).toHaveAttribute("aria-expanded", "false");
+
+    fireEvent.click(hamburger);
+    expect(onOpenSidebar).toHaveBeenCalledTimes(1);
+  });
+
+  it("reflects the sidebar state in aria-expanded", () => {
+    const { getByRole } = render(
+      <Header sidebarOpen onOpenSidebar={jest.fn()} />,
+    );
+
+    expect(getByRole("button", { name: "Abrir menú" })).toHaveAttribute(
+      "aria-expanded",
+      "true",
+    );
   });
 });

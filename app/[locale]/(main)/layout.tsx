@@ -1,14 +1,9 @@
-import { Header } from "@/components/layout/header";
+import MainShell from "@/components/layout/main-shell";
 
 export default function MainLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Header />
-      {children}
-    </>
-  );
+  return <MainShell>{children}</MainShell>;
 }
