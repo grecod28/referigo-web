@@ -10,7 +10,21 @@
     "profile": "Perfil"
   },
   "home": {
-    "title": "Las Mejores Ofertas en",
-    "description": "Tu plataforma de referidos"
+    "title": "Encuentra Mejores Ofertas en",
+    "description": "Deja a nuestros expertos que encuentren las mejores ofertas por tí",
+    "search": {
+      "placeholder": "Busca ofertas, tiendas, cupones y promociones...",
+      "description": "Ej: Cupones, Ofertas, Tiendas, Marcas, Restaurantes y más..."
+    }
+  },
+  "search": {
+    "filters": {
+      "label": "Tipo de búsqueda",
+      "all": "Todos",
+      "offers": "Ofertas",
+      "coupons": "Cupones",
+      "stores": "Tiendas",
+      "restaurants": "Restaurantes"
+    }
   }
 }

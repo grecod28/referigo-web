@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import SearchButton from "@/components/shared/search-button";
+import SearchForm from "@/components/shared/search-form";
 import { IoSearch } from "react-icons/io5";
 
 export default function HeaderSearchBar() {
@@ -30,7 +30,7 @@ export default function HeaderSearchBar() {
         <IoSearch size={20} />
       </button>
 
-      <SearchButton className="hidden w-full max-w-110 md:flex" />
+      <SearchForm className="hidden w-full max-w-110 md:flex" />
 
       {isOpen && (
         <div
@@ -41,7 +41,7 @@ export default function HeaderSearchBar() {
           className="fixed h-screen inset-0 z-50 flex items-start justify-center bg-black/40 px-4 pt-6 animate-[searchbar-in_0.25s_ease-out] md:hidden"
         >
           <div className="w-full max-w-lg" onClick={(e) => e.stopPropagation()}>
-            <SearchButton
+            <SearchForm
               className="flex w-full"
               inputProps={{ autoFocus: true }}
             />

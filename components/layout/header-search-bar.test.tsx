@@ -25,13 +25,12 @@ describe("HeaderSearchBar", () => {
     fireEvent.click(screen.getByRole("button", { name: "Abrir buscador" }));
 
     const dialog = screen.getByRole("dialog", { name: "Buscador" });
-    expect(dialog).toHaveClass("bg-black");
+    expect(dialog).toHaveClass("bg-black/40");
     expect(dialog).toHaveClass("justify-center");
     expect(dialog).toHaveClass("items-start");
-    expect(screen.getByRole("button", { name: "Abrir buscador" })).toHaveAttribute(
-      "aria-expanded",
-      "true",
-    );
+    expect(
+      screen.getByRole("button", { name: "Abrir buscador" }),
+    ).toHaveAttribute("aria-expanded", "true");
   });
 
   it("autofocuses the search input when the overlay opens", () => {
@@ -82,7 +81,9 @@ describe("HeaderSearchBar", () => {
     const dialog = screen.getByRole("dialog", { name: "Buscador" });
     fireEvent.click(within(dialog).getByRole("textbox"));
 
-    expect(screen.getByRole("dialog", { name: "Buscador" })).toBeInTheDocument();
+    expect(
+      screen.getByRole("dialog", { name: "Buscador" }),
+    ).toBeInTheDocument();
   });
 
   it("submits to /search from the overlay", () => {
@@ -103,7 +104,9 @@ describe("HeaderSearchBar", () => {
 
     for (let i = 0; i < 3; i++) {
       fireEvent.click(toggle);
-      expect(screen.getByRole("dialog", { name: "Buscador" })).toBeInTheDocument();
+      expect(
+        screen.getByRole("dialog", { name: "Buscador" }),
+      ).toBeInTheDocument();
 
       fireEvent.keyDown(document, { key: "Escape" });
       expect(screen.queryByRole("dialog")).not.toBeInTheDocument();

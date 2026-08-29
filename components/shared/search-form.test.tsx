@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import SearchButton from "@/components/shared/search-button";
+import SearchForm from "@/components/shared/search-form";
 
 function getForm(container: HTMLElement) {
   const form = container.querySelector("form");
@@ -7,9 +7,9 @@ function getForm(container: HTMLElement) {
   return form;
 }
 
-describe("SearchButton", () => {
+describe("SearchForm", () => {
   it("renders a GET form to /search with an input named q by default", () => {
-    const { container } = render(<SearchButton />);
+    const { container } = render(<SearchForm />);
 
     const form = getForm(container);
     expect(form).toHaveAttribute("action", "/search");
@@ -22,18 +22,18 @@ describe("SearchButton", () => {
   });
 
   it("uses a custom action when provided", () => {
-    const { container } = render(<SearchButton action="/products" />);
+    const { container } = render(<SearchForm action="/products" />);
     expect(getForm(container)).toHaveAttribute("action", "/products");
   });
 
   it("applies className to the form", () => {
-    const { container } = render(<SearchButton className="w-full max-w-md" />);
+    const { container } = render(<SearchForm className="w-full max-w-md" />);
     expect(getForm(container)).toHaveClass("w-full", "max-w-md");
   });
 
   it("renders params as hidden inputs", () => {
     const { container } = render(
-      <SearchButton
+      <SearchForm
         params={{ category: "libros", sort: "relevance", count: 10, active: false }}
       />,
     );
@@ -51,7 +51,7 @@ describe("SearchButton", () => {
 
   it("skips null and undefined params", () => {
     const { container } = render(
-      <SearchButton
+      <SearchForm
         params={{ category: "libros", ignored: null, missing: undefined }}
       />,
     );
@@ -66,7 +66,7 @@ describe("SearchButton", () => {
 
   it("overrides the input props through inputProps", () => {
     render(
-      <SearchButton
+      <SearchForm
         inputProps={{ name: "query", placeholder: "Buscar productos..." }}
       />,
     );

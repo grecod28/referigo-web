@@ -11,6 +11,20 @@
   },
   "home": {
     "title": "Find Best Deals in",
-    "description": "Your referral platform"
+    "description": "Let our experts find the best deals for you",
+    "search": {
+      "placeholder": "Search for offers, stores, coupons & offers...",
+      "description": "E.g. Coupons, Offers, Stores, Brands, Restaurant & more..."
+    }
+  },
+  "search": {
+    "filters": {
+      "label": "Search type",
+      "all": "All",
+      "offers": "Offers",
+      "coupons": "Coupons",
+      "stores": "Stores",
+      "restaurants": "Restaurants"
+    }
   }
 }

@@ -7,19 +7,19 @@ export type SearchParams = Record<
   string | number | boolean | null | undefined
 >;
 
-type SearchButtonProps = {
+type SearchFormProps = {
   action?: string;
   params?: SearchParams;
   inputProps?: InputProps;
   className?: string;
 };
 
-export default function SearchButton({
+export default function SearchForm({
   action = "/search",
   params,
   inputProps,
   className,
-}: SearchButtonProps) {
+}: SearchFormProps) {
   return (
     <form className={className} action={action} method="GET">
       {params &&
