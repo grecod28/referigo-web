@@ -1,5 +1,5 @@
 import { IoMenu, IoNotifications, IoPerson } from "react-icons/io5";
-import SearchButton from "@/components/shared/search-button";
+import HeaderSearchBar from "./header-search-bar";
 
 type HeaderProps = {
   sidebarOpen?: boolean;
@@ -23,7 +23,7 @@ export function Header({
           <IoMenu size={22} />
         </button>
 
-        <SearchButton className="flex w-full max-w-110" />
+        <HeaderSearchBar />
       </div>
 
       <section className="flex shrink-0 items-center gap-4">
