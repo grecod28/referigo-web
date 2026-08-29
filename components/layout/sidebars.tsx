@@ -94,7 +94,7 @@ export function Sidebar({
 
       <aside
         aria-label="Sidebar"
-        className={`fixed inset-y-0 left-0 z-50 flex w-60 flex-col bg-surface transition-[width,transform] duration-300 ease-in-out md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 flex w-60 flex-col bg-surface transition-all duration-300 ease-in-out md:translate-x-0 ${
           open ? "translate-x-0" : "-translate-x-full"
         } ${collapsed ? "md:w-20" : "md:w-56 lg:w-60"}`}
       >
@@ -129,7 +129,11 @@ export function Sidebar({
         <div className="mx-5 h-px bg-border" />
 
         <nav aria-label="Principal" className="mt-2 px-3">
-          <Link href="/" onClick={onClose} className={itemClasses(isActive("/"))}>
+          <Link
+            href="/"
+            onClick={onClose}
+            className={itemClasses(isActive("/"))}
+          >
             <IoHomeOutline size={18} className="shrink-0" />
             <span className={collapsed ? "md:hidden" : ""}>Home</span>
           </Link>
